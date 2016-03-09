@@ -8,18 +8,20 @@ input <- read.table(
 ################# calculating the log and logratio
 
 library(prospectr)
-input$testSample1filter <- c(input$testSample1[1:5], movav(input$testSample1, w = 11),input$testSample1[15484:15488])
-input$testSample2filter <- c(input$testSample2[1:5], movav(input$testSample2, w = 11),input$testSample2[15484:15488])
+put$ratio <- input$testSample2/input$testSample1
+input$logratio <- log(-1*input$ratio) 
+input$logfilterratio <- c(rep(0, times = 2), movav(input$logratio, w = 5),rep(0, times = 2))
+# implimenting reuction of noise by averaging filter
 
-input$ratio <- input$testSample2filter/input$testSample1filter
-input$logratio <- log(input$ratio) 
 
+# old log ratio
 library(plotly)
 plot_ly(input, 
         x = start, 
-        y = testSample1,
+        y = logratio,
         mode = "markers")
+#filtered log ratio
 plot_ly(input,
         x = start,
-        y = testSample1filter,
+        y = logfilterratio,
         mode = "markers")
