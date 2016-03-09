@@ -4,7 +4,7 @@ Basic noise reduction function in R for logRatio signal of the 2 samples contain
 As it was a **Noise Reduction** question **Not Noise Removal**, a simple averaging filter has been used.
 
 Other suggested techniques for **Noise Removal**:<br>
-Effecient result by : Noise Removal + Reduction
+Effecient result by : Noise Removal + Reduction<br>
 For Noise Removal : **DBSCAN, K-Means**.
 
 ###Befor Noise Reduction###
