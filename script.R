@@ -1,6 +1,9 @@
+WD <- getwd()
+setwd(WD)
+
 ################## reading the input file
 input <- read.table(
-  "C:/Users/Varun/Desktop/ds/Develop a noise reduction engine for SCoNEs/SCONES_test.tsv",
+  "SCONES_test.tsv",
   sep="\t", 
   header=TRUE)
 
